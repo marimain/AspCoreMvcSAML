@@ -1,9 +1,13 @@
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
 @{
     ViewData["Title"] = "Home Page";
+   
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome to AspCoreMVC with SAML</h1>
+    <div>login user: @Accessor.HttpContext.Session.GetString("UserName")</div>
     <div>
         This app is a .net core 8 MVC with authorization of Azure B2C in conrosorg.onmicrosoft.com
     </div>
